@@ -28,6 +28,7 @@ Things to know:
 - A ballot with no content is not counted, whatever the method. A ballot form that does not fit the method is an error, never a guess.
 - Ties are never broken by chance: all tied winners are listed, or nothing is decided and the note says why.
 - `evaluate_with_held_back` takes the number of answers that exist but are not shown yet. If they could change a decided result, it says "not decided yet" instead of naming a winner.
+- Date rule (`availability`): for a date poll with the answers Yes, If needed, No. `count_answers` counts the three apart, `best_window` suggests the window with the most commitments (Yes plus If needed, no weighting), then fewer "If needed", then the earliest; it suggests nothing when nobody committed. A person decides; this only suggests. It is not yet a `Method` of the registry.
 - Tests: the Schulze example of the 45 voters from the literature, an independent brute-force reference implementation of Schulze checked against the library on many pseudo-random ballot sets, the Condorcet property, and regression tests from review.
 
 ## What it does not do
@@ -64,6 +65,7 @@ Vier Stimmzettel-Formen: eine Wahl, mehrere gebilligte Wahlen, eine Rangfolge, e
 - Ein leerer Stimmzettel zählt nicht, bei keinem Verfahren. Eine Form, die nicht zum Verfahren passt, ist ein Fehler, nie eine Vermutung.
 - Gleichstände werden nie durch Zufall entschieden: alle gleichen Sieger stehen in der Liste, oder es ist nichts entschieden und der Hinweis sagt warum.
 - `evaluate_with_held_back` bekommt die Zahl der Antworten, die es gibt, aber noch nicht gezeigt werden. Könnten sie ein entschiedenes Ergebnis ändern, sagt es „noch nicht entschieden“ statt einen Sieger zu nennen.
+- Terminregel (`availability`): für eine Terminumfrage mit den Antworten Ja, Wenn nötig, Nein. `count_answers` zählt die drei getrennt, `best_window` schlägt das Fenster mit den meisten Zusagen vor (Ja plus Wenn nötig, ohne Gewichtung), dann mit weniger „Wenn nötig“, dann das früheste; hat niemand zugesagt, schlägt es nichts vor. Ein Mensch entscheidet; es schlägt nur vor. Noch keine `Method` der Registry.
 - Tests: das Schulze-Beispiel mit 45 Wählenden aus der Literatur, eine unabhängige Referenz-Umsetzung von Schulze (Pfade ausprobiert) gegen die Bibliothek auf vielen Zufalls-Stimmzettel-Mengen, die Condorcet-Eigenschaft und Fehler-Tests aus der Prüfung.
 
 ## Was es nicht tut

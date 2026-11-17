@@ -47,3 +47,13 @@ fn without_any_commitment_nothing_is_suggested() {
     assert_eq!(best_window(&[t(0, 0, 4), t(0, 0, 4)]), None);
     assert_eq!(best_window(&[]), None);
 }
+
+#[test]
+fn a_window_with_only_if_needed_counts_as_a_commitment_and_can_be_suggested() {
+    let counted = count_answers([Answer::IfNeeded, Answer::IfNeeded, Answer::No]);
+    assert_eq!(counted, t(0, 2, 1));
+    assert_eq!(counted.commitments(), 2);
+    // Nobody said Yes, but "If needed" is a commitment: the window is suggested, not dropped.
+    assert_eq!(best_window(&[t(0, 0, 3), t(0, 2, 1)]), Some(1));
+    assert_eq!(best_window(&[t(0, 2, 1)]), Some(0));
+}
