@@ -2,6 +2,16 @@
 
 Version = tag; all crates of the workspace carry the same version (ADR 0064, 0.0.N). No tag is set by the work branch.
 
+## Unreleased
+
+### English
+
+- **Sorted in, not compiled (workflow `geruest-heben`, sort-in only).** The counting rule of the date poll moved here from the frontend of `fs-decisions` (`fs-decisions-simple/src/grid.rs` at 5cd8806; owner decision 2026-11-17: Yes, If needed, No stay apart, no weighting; the suggested window has the most commitments, then fewer "If needed", then the earliest): `src/availability.rs` with `Answer`, `AnswerCount`, `count_answers`, `best_window`, tests in `tests/availability.rs`. Only renamed (`Tally`, `tally`, `best` would clash with the result type of this crate); logic unchanged. It is not yet a `Method` of the registry and has no ballot form (open talk: make it a `DecisionMethod`). Nothing was built or tested after the move.
+
+### Deutsch
+
+- **Einsortiert, nicht kompiliert (Workflow `geruest-heben`, nur Einsortieren).** Die Zählregel der Terminumfrage ist aus dem Frontend von `fs-decisions` (`fs-decisions-simple/src/grid.rs` bei 5cd8806; Entscheidung des Inhabers 2026-11-17: Ja, Wenn nötig, Nein bleiben getrennt, keine Gewichtung; vorgeschlagen wird das Fenster mit den meisten Zusagen, dann mit weniger „Wenn nötig“, dann das früheste) hierher gezogen: `src/availability.rs` mit `Answer`, `AnswerCount`, `count_answers`, `best_window`, Tests in `tests/availability.rs`. Nur umbenannt (`Tally`, `tally`, `best` stießen mit dem Ergebnistyp dieses Crates zusammen); Logik unverändert. Noch keine `Method` der Registry und keine Stimmzettel-Form (offenes Gespräch: zu einem `DecisionMethod` machen). Nach dem Verschieben wurde nichts gebaut oder getestet.
+
 ## 0.0.1
 
 ### English

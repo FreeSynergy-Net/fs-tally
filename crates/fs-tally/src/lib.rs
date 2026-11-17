@@ -8,6 +8,7 @@
 #![forbid(unsafe_code)]
 #![warn(clippy::pedantic)]
 
+mod availability;
 mod ballot;
 mod error;
 mod method;
@@ -15,6 +16,7 @@ mod rank;
 mod registry;
 mod tally;
 
+pub use availability::{Answer, AnswerCount, best_window, count_answers};
 pub use ballot::Ballot;
 pub use error::{Error, Result};
 pub use method::{DecisionMethod, Method};
