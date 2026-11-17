@@ -1,0 +1,14 @@
+[package]
+name = "fs-tally"
+description = "Counting methods for votes and decisions: ten pure methods (plurality, majority, supermajority, approval, score, Schulze, instant runoff, Borda, consent, systemic consensing), no storage"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+authors.workspace = true
+repository.workspace = true
+rust-version.workspace = true
+keywords = ["voting", "tally", "schulze", "consent", "decision"]
+categories = ["algorithms"]
+
+[dependencies]
+thiserror = "2"

@@ -1,0 +1,16 @@
+# Runs fmt, clippy (pedantic), tests and the coding rules on every push (fs-release caller, pinned).
+name: check
+on:
+  push:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: "${{ github.workflow }}-${{ github.ref }}"
+  cancel-in-progress: true
+
+jobs:
+  check:
+    uses: FreeSynergy/fs-release/.github/workflows/check.yml@v0.0.10
