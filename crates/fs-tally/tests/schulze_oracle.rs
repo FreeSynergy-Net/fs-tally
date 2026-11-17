@@ -113,7 +113,7 @@ fn agrees_with_the_path_enumeration_reference() {
 
 #[test]
 fn a_condorcet_winner_is_the_only_winner() {
-    // B beats A 3:2 and C 4:1; A beats C 3:2.
+    // B beats A 3:2 and C 5:0; A beats C 3:2.
     let mut b = rankings(2, &["A", "B", "C"]);
     b.extend(rankings(2, &["B", "C", "A"]));
     b.extend(rankings(1, &["B", "A", "C"]));

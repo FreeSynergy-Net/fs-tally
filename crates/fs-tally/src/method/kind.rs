@@ -1,4 +1,4 @@
-//! The list of methods, (the ten counting methods).
+//! The list of the ten counting methods.
 //!
 //! Pattern: Tagged union used as the key of the registry.
 

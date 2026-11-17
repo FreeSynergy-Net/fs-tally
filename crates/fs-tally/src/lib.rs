@@ -5,6 +5,7 @@
 //! an error, never a guess.
 
 #![deny(missing_docs)]
+#![forbid(unsafe_code)]
 #![warn(clippy::pedantic)]
 
 mod ballot;
