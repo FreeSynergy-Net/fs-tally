@@ -54,10 +54,10 @@ fn prefs(n: usize, rankings: &[Vec<usize>]) -> Vec<Vec<i64>> {
     let mut d = vec![vec![0_i64; n]; n];
     for r in rankings {
         let pos = |c: usize| r.iter().position(|&x| x == c).unwrap_or(n);
-        for i in 0..n {
-            for j in 0..n {
+        for (i, row) in d.iter_mut().enumerate() {
+            for (j, cell) in row.iter_mut().enumerate() {
                 if pos(i) < pos(j) {
-                    d[i][j] += 1;
+                    *cell += 1;
                 }
             }
         }
