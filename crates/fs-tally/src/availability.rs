@@ -39,14 +39,16 @@ impl AnswerCount {
 /// Count the answers of one window.
 #[must_use]
 pub fn count_answers(answers: impl IntoIterator<Item = Answer>) -> AnswerCount {
-    answers.into_iter().fold(AnswerCount::default(), |mut t, a| {
-        match a {
-            Answer::Yes => t.yes += 1,
-            Answer::IfNeeded => t.if_needed += 1,
-            Answer::No => t.no += 1,
-        }
-        t
-    })
+    answers
+        .into_iter()
+        .fold(AnswerCount::default(), |mut t, a| {
+            match a {
+                Answer::Yes => t.yes += 1,
+                Answer::IfNeeded => t.if_needed += 1,
+                Answer::No => t.no += 1,
+            }
+            t
+        })
 }
 
 /// The window to suggest: the one with the most commitments; on a tie the one with fewer "If needed"; on a further tie the
